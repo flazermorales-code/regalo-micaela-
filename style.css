@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+body {
+    background-color: #050310;
+    color: #fff;
+    font-family: 'Press Start 2P', monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+    padding: 15px;
+}
+
+#game-container {
+    position: relative;
+    width: 100%;
+    max-width: 440px; 
+    height: 90vh; 
+    max-height: 640px; 
+    aspect-ratio: 3 / 4; 
+    display: flex;
+    flex-direction: column;
+    border: 4px solid #3a1d5d;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.3), 0 0 60px rgba(255, 0, 255, 0.2);
+    background-color: #050310;
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    border-radius: 8px;
+    transition: transform 0.1s ease-out;
+}
+
+#hud {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    font-size: 10px;
+    background: rgba(5, 3, 16, 0.85);
+    z-index: 5;
+    border-bottom: 2px solid #3a1d5d;
+    border-radius: 8px 8px 0 0;
+}
+
+#lives-val { display: inline-flex; align-items: center; gap: 4px; }
+.heart-icon { width: 16px; height: 16px; image-rendering: pixelated; }
+#score-display { color: #ffff00; }
+#level-display { color: #00ffff; }
+
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(5, 3, 16, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    z-index: 10;
+    border-radius: 8px;
+}
+
+.screen h1 {
+    font-size: 24px;
+    color: #ff3366;
+    margin-bottom: 15px;
+    text-shadow: 3px 3px 0px #00ffff;
+    line-height: 1.4;
+}
+
+.screen p {
+    font-size: 9px;
+    line-height: 1.8;
+    color: #cccccc;
+    margin-bottom: 25px;
+}
+
+/* Fondo Romántico de la Pantalla Final */
+#victory-screen {
+    background: radial-gradient(circle at center, rgba(80, 15, 40, 0.85) 0%, rgba(5, 3, 16, 0.95) 100%);
+    justify-content: flex-start;
+    padding-top: 40px;
+    overflow-y: auto;
+}
+
+.phrases-container {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.love-phrase {
+    font-size: 8px !important;
+    color: #ffb3d1 !important;
+    margin-bottom: 8px !important;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    animation: pulseText 2s infinite ease-in-out;
+}
+
+@keyframes pulseText {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.03); color: #fff; }
+}
+
+#timer {
+    font-size: 9px;
+    color: #fff;
+    background: rgba(255, 51, 102, 0.15);
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ff3366;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    width: 90%;
+    box-shadow: 0 0 10px rgba(255, 51, 102, 0.3);
+}
+
+#reward-section {
+    width: 100%;
+    margin-top: 10px;
+}
+
+#gift-content {
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px dashed #00ffff;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 15px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+#gift-content h3 {
+    font-size: 10px;
+    color: #ffff00;
+    margin-bottom: 10px;
+}
+
+#gift-content p {
+    font-size: 8px;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.dedication {
+    display: block;
+    font-size: 7px;
+    color: #ff00ff;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.btn {
+    font-family: 'Press Start 2P', monospace;
+    background-color: #ff3366;
+    color: #fff;
+    border: 2px solid #ff99bb;
+    padding: 12px 18px;
+    font-size: 9px;
+    cursor: pointer;
+    border-radius: 6px;
+    box-shadow: 0 4px 0 #990033, 0 0 10px rgba(255, 51, 102, 0.4);
+}
+
+.btn:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 #990033;
+}
+
+#mobile-controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 440px;
+    margin-top: 15px;
+    gap: 10px;
+}
+
+.control-btn {
+    background-color: rgba(58, 29, 93, 0.6);
+    border: 2px solid #5c2c90;
+    color: #fff;
+    padding: 15px;
+    font-size: 12px;
+    border-radius: 8px;
+    flex: 1;
+    font-family: 'Press Start 2P', monospace;
+}
+
+#btn-shoot { background-color: rgba(255, 51, 102, 0.4); border-color: #ff3366; flex: 1.5; }
+.hidden { display: none !important; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}

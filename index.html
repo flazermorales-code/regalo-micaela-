@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission Love 🚀</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <!-- HUD Superior -->
+        <div id="hud" class="hidden">
+            <div id="score-display">SCORE: <span id="score-val">0</span></div>
+            <div id="level-display">NIVEL: <span id="level-val">1</span></div>
+            <div id="lives-display">VIDAS: <span id="lives-val"></span></div>
+        </div>
+
+        <!-- Canvas del Juego -->
+        <canvas id="gameCanvas"></canvas>
+
+        <!-- Pantalla de Inicio -->
+        <div id="start-screen" class="screen">
+            <h1>MISSION<br>LOVE ❤️</h1>
+            <p>Una misión espacial para mi persona favorita</p>
+            <button id="start-btn" class="btn">Comenzar Misión 🚀</button>
+        </div>
+
+        <!-- Pantalla de Victoria / Escena Romántica Final -->
+        <div id="victory-screen" class="screen hidden">
+            <div class="phrases-container">
+                <p class="love-phrase">Te amo mucho sulfi ❤️</p>
+                <p class="love-phrase">Eres lo mejor que me ha pasado</p>
+                <p class="love-phrase">Eres increíble</p>
+                <p class="love-phrase">Eres lo mejor de mi mundo</p>
+                <p class="love-phrase" style="color: #ff3366; font-size: 11px;">Te amo Micaela ❤️</p>
+            </div>
+
+            <!-- Contador de Tiempo -->
+            <div id="timer">Calculando tiempo de amor...</div>
+
+            <!-- Sección de Recompensa -->
+            <div id="reward-section">
+                <button id="claim-btn" class="btn">Reclamar Recompensa 🎁</button>
+                <div id="gift-content" class="hidden">
+                    <h3>¡Tu Regalo Misterioso!</h3>
+                    <p>✨ Una cita cuando esté sanito ✨</p>
+                    <p>🤗 Muchos hechos y abachos ❤️</p>
+                    <span class="dedication">Esto es para ti y nadie más</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controles Móviles -->
+    <div id="mobile-controls" class="hidden">
+        <button id="btn-left" class="control-btn">◀</button>
+        <button id="btn-shoot" class="control-btn">SPACE</button>
+        <button id="btn-right" class="control-btn">▶</button>
+    </div>
+
+    <!-- Audio -->
+    <audio id="bg-music" src="assets/music.mp3" loop></audio>
+    <audio id="love-music" src="assets/love-music.mp3" loop></audio>
+
+    <script src="game.js"></script>
+</body>
+</html>
